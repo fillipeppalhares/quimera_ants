@@ -1,0 +1,53 @@
+savanna
+steppe
+pampas
+
+Card::Biome (zone, temperature, age, biome_type, description, center_q, center_r, center_s, radius, terrain_mapping | has_terrains, has_hazards)
+  zone
+    arctic
+    subarctic
+    temperate
+    dry
+    tropical
+    equatorial
+
+  temperature
+    freezing
+    very_cold
+    cold
+    cool
+    mild
+    warm
+    hot
+    very_hot
+    scorching
+
+  season_decorators(summer, autumn, winter, spring)
+  if terrain_mapping is nil, randomize. If present, use it to set hex terrain. It shall have a standard terrain to fill hexes not located at the mapping.
+
+Card::Terrain
+  STI Terrain
+    Prairie
+      Meadow	              Grass-covered area with wildflowers, often lush and open.
+      Grass Field	          General grassy area, possibly more uniform, with fewer flowers.
+      Shrubs	              Area with low, woody plants, often in drier or mixed-grass regions.
+      Water Stream	        Flowing body of water, like a creek or small river.
+      Scattered Tree	      Individual or small clusters of trees, rare but present near water or in sheltered areas.
+      Rocky Outcrop	        Exposed rock formations, often found in elevated or drier regions of the prairie.
+      Flower Field	        Area dominated by wildflowers, often more vibrant and colorful.
+      Wet Meadow	          Seasonally wet area, damp during rainy seasons but dries out in summer, dominated by grasses and flowers.
+      Marshy Field	        Permanently wet, waterlogged area with reeds, cattails, and aquatic plants.
+      Pond	                Small, still body of water, supporting aquatic life and plants.
+      Prairie Swale	        Low, wet area where water collects, but not flooded like a marsh.
+      Prairie Sinkhole      Depressions in the land, where water collects or the ground has subsided.
+      Burn Area             Area affected by fire, either recently or periodically, often with a unique ecological recovery process.
+
+Card::Hazard
+  Fire-Based
+  Water-Based
+  Wind-Based
+  Temperature
+  Geological
+  Biological
+
+Card::Resource
