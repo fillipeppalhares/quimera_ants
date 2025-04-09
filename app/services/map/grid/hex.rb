@@ -1,19 +1,23 @@
 # frozen_string_literal: true
 
 class Map::Grid::Hex
-  def self.coordinates(radius:)
-    coords = []
+  def self.positions(radius:, center_q: 0, center_r: 0, center_s: 0)
+    coordinates = []
 
-    (-radius..radius).each do |q|
-      (-radius..radius).each do |r|
-        s = -(q + r)
+    (-radius..radius).each do |delta_q|
+      (-radius..radius).each do |delta_r|
+        delta_s = -(delta_q + delta_r)
 
-        next unless (q.abs + r.abs + s.abs) <= radius
+        next unless (delta_q.abs + delta_r.abs + delta_s.abs) <= radius
 
-        coords << [q, r, s]
+        q = delta_q + center_q
+        r = delta_r + center_r
+        s = delta_s + center_s
+
+        coordinates << Map::Coordinate.new(q, r, s)
       end
     end
 
-    coords
+    coordinates
   end
 end

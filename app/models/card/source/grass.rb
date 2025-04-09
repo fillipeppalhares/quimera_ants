@@ -1,4 +1,6 @@
 class Card::Source::Grass < Card::Source
+  nature :plant
+
   private
 
   def fill_yields

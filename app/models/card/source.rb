@@ -1,4 +1,6 @@
 class Card::Source < Card
+  class_attribute :nature, default: nil
+  class_attribute :traits, default: []
   attribute :yields, default: {}
 
   belongs_to :game
@@ -34,5 +36,20 @@ class Card::Source < Card
     return super(method_id, *args) unless resources
 
     resources
+  end
+
+  class << self
+    def nature(value = nil)
+      return @nature unless value
+
+      @nature = value
+    end
+
+    def traits(*values)
+      @traits ||= []
+      @traits += values if values.any?
+
+      @traits
+    end
   end
 end

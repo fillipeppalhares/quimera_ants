@@ -2,7 +2,7 @@ class CreateCardBiomes < ActiveRecord::Migration[8.0]
   def change
     create_table :card_biomes do |t|
       t.references :game, null: false, foreign_key: true
-      t.integer :biome, null: false
+      t.integer :biome_type, null: false
       t.integer :zone, null: false
       t.integer :temperature, null: false
       t.text :description, null: false
