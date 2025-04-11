@@ -4,13 +4,13 @@ class Card::Terrain < Card
   belongs_to :game
   belongs_to :biome
   has_many :sources
-
+  
   after_initialize :resolve_slots, if: -> { new_record? }
 
   def resolve_slots
     source_slot_rules.each do |slot|
       if slot.required
-          sources.build(type: slot.required)
+          sources.build(game:, type: slot.required)
       else
         source = Resolver::SourceSlot.call(nature: slot.nature,
                                            prefer: slot.prefer,
@@ -20,7 +20,7 @@ class Card::Terrain < Card
 
         next if sources.map(&:type).uniq.include?(source.name)
 
-        sources << source.new
+        sources << source.new(game:)
       end
     end
   end
