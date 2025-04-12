@@ -2,7 +2,7 @@ savanna
 steppe
 pampas
 
-Card::Biome (zone, temperature, age, biome_type, description, center_q, center_r, center_s, radius, terrain_mapping | has_terrains, has_hazards)
+Card::Biome (game_id, zone, temperature, age, biome_type, description, center_q, center_r, center_s, radius, terrain_mapping | has_terrains, has_hazards)
   zone
     arctic
     subarctic
@@ -25,7 +25,7 @@ Card::Biome (zone, temperature, age, biome_type, description, center_q, center_r
   season_decorators(summer, autumn, winter, spring)
   if terrain_mapping is nil, randomize. If present, use it to set hex terrain. It shall have a standard terrain to fill hexes not located at the mapping.
 
-Card::Terrain
+Card::Terrain (game_id, biome_id, type, q, r, s | has_resources)
   STI Terrain
     Prairie
       Meadow	              Grass-covered area with wildflowers, often lush and open.
@@ -42,6 +42,14 @@ Card::Terrain
       Prairie Sinkhole      Depressions in the land, where water collects or the ground has subsided.
       Burn Area             Area affected by fire, either recently or periodically, often with a unique ecological recovery process.
 
+      it doesn't change its records, it's only affected by the biome's changes
+      movement_cost
+      vulnerability and resistance to hazards
+      placement rules
+      each terrain type is affected by the season and temperature somehow, and it should have a randomization regarding the effects
+      it should have a degradation and regeneration factor that affects resources and is influenced by season and temperature
+      life cycle
+
 Card::Hazard
   Fire-Based
   Water-Based
@@ -50,4 +58,30 @@ Card::Hazard
   Geological
   Biological
 
-Card::Resource
+  knows where and when it started and ended
+
+Card::Source (game_id, terrain_id, type, yield)
+
+  yield: { grass: { amount: 1, regen: 0.1, seasonal_effects: { spring: [], summer: [], autumn: [], winter: [] } } }
+  season_service(summer, autumn, winter, spring) to impact yields
+
+  { tier, sustenance, side_effects, attraction, weight, bulk, decay_rate, fungal_affinity }
+
+  food have tier. Some castes require a certain tier. Basic, Standard, Advanced, Rare, Luxury (?)
+  royal jelly is tier 5 and is produced by nurse ants. They need to consume food of tier 3 atleast in order to produce the jelly. (?)
+  royal jelly requires a steady supply of high-tier food (like pollen, nectar, or sugar)
+  after a food is stored, its decay is tracked by the storage itself
+  If an ant eats only dry food (seeds, meat), Sustenance drains faster
+  Water-rich foods prevent this loss, acting as "hydrating" foods
+  https://www.youtube.com/shorts/bV15v2CHAvU
+  
+
+Gene (name, description, dominance, phenotype, effects)
+QuimeraAntColony
+ColonyGene
+Specie
+SpecieGene
+
+Dandelion Seeds
+
+Antlion larvae (https://en.wikipedia.org/wiki/Antlion)

@@ -1,9 +1,1 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Gene.find_or_create_by!(name: "Phagogenesis", description: "Phagogenesis is a rare and powerful reproductive adaptation where an organism assimilates genetic material from consumed creatures. These foreign genes are integrated into its genome and passed down to offspring, enabling rapid evolutionary leaps across generations. No longer bound by the slow crawl of natural selection, species that possess phagogenesis can inherit strength, speed, cunning—or monstrosity—depending on what is devoured. This method of inheritance is unpredictable, but its potential is unmatched.", phenotype: 1, dominance: 4, effects: [])
