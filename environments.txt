@@ -82,6 +82,86 @@ ColonyGene
 Specie
 SpecieGene
 
-Dandelion Seeds
+Air Breather	              Dominant	Can survive in normal oxygen-rich environments.
+Aquatic Breather	          Recessive	Can survive underwater indefinitely.
+Toxin-Resistant Respiration	Recessive	Immune to noxious gas or sulfurous zones.
+Low-Oxygen Tolerance	      Neutral	  Functions well in thin air or underground environments.
+Anaerobic Burst	            Neutral	  Can perform short actions without breathing. Good for tight spaces or traps.
 
+🌗 Crepuscular (blend of diurnal and nocturnal)
+Description:
+Active primarily during twilight—dawn and dusk—crepuscular creatures balance safety and efficiency, avoiding predators of both day and night.
+
+
+Here are the core factors that can cause a slot to appear:
+
+1. Queen Lineage Depth (Evolutionary Progression)
+Every new Queen born adds one or more new slots, reflecting the evolutionary adaptation of the colony.
+
+Could be fully randomized, or weighted by prior phenotype usage.
+
+Example:
+
+"This Queen is the 5th in the lineage. She inherited all the slots of her mother and unlocked +1 slot (randomly: weaponry)."
+
+2. Phenotype Mastery (Specialization by use)
+If a phenotype is used often and successfully (in battles, scouting, building, etc), its slot count can increase.
+
+Maybe tracked by number of ants expressing that phenotype or successful uses of it.
+
+Example:
+
+"Your colony has spawned 100 ants with wings, and completed 20 flight missions. → +1 Wing Slot unlocked."
+
+3. Queen Mutation Event / Milestone
+A random or triggered mutation can grant bonus slots.
+
+Could be tied to game events, hazards survived, special food consumed, or ritual-like systems.
+
+Example:
+
+"After feeding on the flesh of a mythical beast, the Queen undergoes a mutation... She gains +1 Utility Slot."
+
+
+species reference (https://www.youtube.com/playlist?list=PL5vZEY2A9f_h1WEcKKbo-RoY7Y4GjkuUy)
+Dandelion Seeds
 Antlion larvae (https://en.wikipedia.org/wiki/Antlion)
+Marauder ants
+Fire ants
+Jumping Spider
+Millipede
+Orb weaver spider
+Weevil beetle
+Worms
+Bettle crubs
+Cricket
+Grasshopper
+
+Detrivores
+  isopods
+    oreo crumble
+    red panda
+    anemone
+    murina
+    panda
+    red koi
+    whiteout
+    papaya
+
+    Path Integration: Enables return to nest without pheromone trails. Useful when isolated or in unfamiliar areas.
+
+
+
+A gene pool é separada entre genoma da rainha e genes comidos recentemente. Para cada fenótipo, é selecionado um gene do genoma, usando aleatoriedade e dominância.
+
+Depois o mesmo processo de aleatoriedade e dominância ocorre nos genes comidos, e aí ocorre a soma dos genes comidos com os genes naturais da rainha.
+
+Acho que os genes comidos deveriam ter prioridade, e não ser resolvido por dominância nessa etapa.
+
+De acordo com algum medidor, mais genes podem ser selecionados para cada fenótipo, tanto do genoma natural quanto dos genes comidos.
+
+Além disso, existem outros genes que pertencem ao fenótipo Modificadores. Esses genes não são selecionados da mesma forma que o restante. Após os genes de um ovo serem escolhidos, os genes modificadores são selecionados usando dominância e aleatoriedade.
+
+Quando uma nova rainha nasce, ela vai ter os genes da mãe + os genes comidos que ainda retem presença. Essa soma são a nova gene pool dela, que será considerada o genoma natural dessa rainha em sua prole. 
+
+Sendo assim, talvez seja interessante ter alimentos que aumentem a chance de um gene específico ser escolhido na fase de aleatoriedade.

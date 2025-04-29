@@ -5,9 +5,9 @@ class Dominance < EnumerateIt::Base
     dominant: 1,
     recessive: 2,
     codominant: 3,
-    unique: 4,
-    # incomplete: 5,
-    # exclusive: 6,
-    # neutral: 7
+    incomplete: 4,
+    neutral: 5,
+    unique: 6,
+    exclusive: 7
   )
 end
